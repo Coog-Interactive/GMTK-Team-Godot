@@ -4,6 +4,7 @@ const WALK_SPEED: float = 300.0
 const DASH_SPEED: float = 500.0
 const JUMP_VELOCITY: float = -400.0
 
+var speed: float = 0.0
 var dashing: bool = false
 
 func _physics_process(delta: float) -> void:
@@ -15,13 +16,11 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	
-	var speed: float = 0
-	
 	# Handle dash.
 	# TODO: Handle dashing in the air?
 	if Input.is_action_pressed("dash"):
 		speed = DASH_SPEED
-	else:
+	elif is_on_floor():
 		speed = WALK_SPEED
 
 	# Get the input direction and handle the movement/deceleration.
