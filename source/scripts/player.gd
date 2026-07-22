@@ -41,5 +41,10 @@ func _physics_process(delta: float) -> void:
 	elif velocity.x < 0:
 		$Sprite2D.flip_h = true
 	
+	# TODO: Remove magic numbers
+	if speed == DASH_SPEED:
+		$Sprite2D.speed_scale = 5.0
+	else:
+		$Sprite2D.speed_scale = 3.0
 
 	move_and_slide()
