@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Handle dash.
 	# TODO: Handle dashing in the air?
-	if Input.is_action_pressed("dash"):
+	if Input.is_action_pressed("dash") and is_on_floor():
 		speed = DASH_SPEED
 	elif is_on_floor():
 		speed = WALK_SPEED
