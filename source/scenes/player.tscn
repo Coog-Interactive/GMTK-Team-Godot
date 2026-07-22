@@ -1,16 +1,70 @@
 [gd_scene format=3 uid="uid://bxb4pbm23881o"]
 
 [ext_resource type="Script" uid="uid://cet7cduk0crn8" path="res://source/scripts/player.gd" id="1_q44i5"]
-[ext_resource type="Texture2D" uid="uid://b8do3ncmdtobp" path="res://assets/textures/icon.svg" id="2_83o3d"]
+[ext_resource type="Texture2D" uid="uid://c6ydmul2yqjo6" path="res://assets/Tilesets/BarTender.png" id="2_q44i5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83o3d"]
+atlas = ExtResource("2_q44i5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcll1"]
+atlas = ExtResource("2_q44i5")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sj6rc"]
+atlas = ExtResource("2_q44i5")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lm78u"]
+atlas = ExtResource("2_q44i5")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8dcb"]
+atlas = ExtResource("2_q44i5")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1iji"]
+atlas = ExtResource("2_q44i5")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nusuv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83o3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcll1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sj6rc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lm78u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8dcb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1iji")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nusuv"]
 size = Vector2(120, 118)
 
 [node name="Player" type="CharacterBody2D" unique_id=1511638149]
+texture_filter = 1
 script = ExtResource("1_q44i5")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=741543357]
-texture = ExtResource("2_83o3d")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1359629173]
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_nusuv")
+animation = &"walk"
+speed_scale = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=856660650]
 shape = SubResource("RectangleShape2D_nusuv")
