@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://757r884vp10l"]
+
+[ext_resource type="Script" uid="uid://3rrac7a45q1d" path="res://source/scripts/hud.gd" id="1_blbsr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nusuv"]
+font_size = 24
+
+[node name="Hud" type="CanvasLayer" unique_id=1092806811]
+script = ExtResource("1_blbsr")
+
+[node name="Label" type="Label" parent="." unique_id=1226867488]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_nusuv")

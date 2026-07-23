@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://dk0uv6bceqjgy"]
 
 [ext_resource type="Texture2D" uid="uid://b8do3ncmdtobp" path="res://assets/textures/icon.svg" id="1_cd50a"]
+[ext_resource type="Script" uid="uid://v3sbpk0rfxfp" path="res://source/scripts/pickup.gd" id="1_ltcsb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nusuv"]
 size = Vector2(44.22591, 70.41969)
 
 [node name="Pickup" type="Area2D" unique_id=268423228]
+script = ExtResource("1_ltcsb")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=216623666]
 texture = ExtResource("1_cd50a")
