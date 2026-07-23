@@ -33,3 +33,7 @@ value = 1000
 
 [node name="GameManager" type="Node" parent="." unique_id=72185749]
 script = ExtResource("5_re8r4")
+
+[node name="Timer" type="Timer" parent="GameManager" unique_id=546561401]
+wait_time = 60.0
+one_shot = true

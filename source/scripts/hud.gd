@@ -6,5 +6,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func update_ui(score: int) -> void:
-	$Label.text = "Score: " + str(score)
+func update_ui(score: int, time: int) -> void:
+	$Score.text = "Score: " + str(score)
+	$Timer.text = str(time)

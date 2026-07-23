@@ -5,11 +5,25 @@
 [sub_resource type="LabelSettings" id="LabelSettings_nusuv"]
 font_size = 24
 
+[sub_resource type="LabelSettings" id="LabelSettings_blbsr"]
+font_size = 32
+
 [node name="Hud" type="CanvasLayer" unique_id=1092806811]
 script = ExtResource("1_blbsr")
 
-[node name="Label" type="Label" parent="." unique_id=1226867488]
+[node name="Score" type="Label" parent="." unique_id=1226867488]
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Score: 0"
 label_settings = SubResource("LabelSettings_nusuv")
+
+[node name="Timer" type="Label" parent="." unique_id=1786105002]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "60"
+label_settings = SubResource("LabelSettings_blbsr")
