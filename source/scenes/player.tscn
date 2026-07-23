@@ -54,7 +54,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nusuv"]
-size = Vector2(120, 118)
+size = Vector2(48, 118)
 
 [node name="Player" type="CharacterBody2D" unique_id=1511638149]
 texture_filter = 1
