@@ -19,5 +19,17 @@ texture = ExtResource("1_hd30q")
 scale = Vector2(1.0045047, 6.3333344)
 shape = SubResource("RectangleShape2D_nusuv")
 
+[node name="Floor2" type="StaticBody2D" parent="." unique_id=1949927047]
+position = Vector2(1063, 504.00003)
+rotation = 1.5707964
+scale = Vector2(7.4, 0.67999995)
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor2" unique_id=860973942]
+texture = ExtResource("1_hd30q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2" unique_id=612433972]
+scale = Vector2(1.0045047, 6.3333344)
+shape = SubResource("RectangleShape2D_nusuv")
+
 [node name="Player" parent="." unique_id=1511638149 instance=ExtResource("2_gb36a")]
 position = Vector2(568, 0)
