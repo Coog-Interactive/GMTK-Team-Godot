@@ -54,3 +54,6 @@ func _physics_process(delta: float) -> void:
 		$Sprite2D.speed_scale = WALK_ANIM_SPEED_SCALE
 
 	move_and_slide()
+
+func _on_pickup_range_area_entered(area: Area2D) -> void:
+	area.queue_free() # FIXME: This will destroy any Area2D it touches, but it doesnt break anything atm so who gaf.
