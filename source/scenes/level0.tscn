@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b8do3ncmdtobp" path="res://assets/textures/icon.svg" id="1_hd30q"]
 [ext_resource type="PackedScene" uid="uid://bxb4pbm23881o" path="res://source/scenes/player.tscn" id="2_gb36a"]
+[ext_resource type="PackedScene" uid="uid://dk0uv6bceqjgy" path="res://source/scenes/pickup.tscn" id="3_gb36a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nusuv"]
 size = Vector2(124.324326, 20)
@@ -21,3 +22,6 @@ shape = SubResource("RectangleShape2D_nusuv")
 
 [node name="Player" parent="." unique_id=1511638149 instance=ExtResource("2_gb36a")]
 position = Vector2(568, 0)
+
+[node name="Pickup" parent="." unique_id=1908282210 instance=ExtResource("3_gb36a")]
+position = Vector2(846, 349)
