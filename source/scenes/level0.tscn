@@ -37,3 +37,5 @@ script = ExtResource("5_re8r4")
 [node name="Timer" type="Timer" parent="GameManager" unique_id=546561401]
 wait_time = 60.0
 one_shot = true
+
+[connection signal="timeout" from="GameManager/Timer" to="Player" method="_on_timer_timeout"]
