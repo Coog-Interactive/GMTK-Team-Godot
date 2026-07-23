@@ -59,6 +59,5 @@ func _on_pickup_range_area_entered(area: Area2D) -> void:
 	$"../GameManager".increase_score(area.value)
 	area.queue_free() # FIXME: This will destroy any Area2D it touches, but it doesnt break anything atm so who gaf.
 
-
 func _on_timer_timeout() -> void:
 	queue_free()
