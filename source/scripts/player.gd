@@ -15,7 +15,7 @@ var wall_running: bool = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-	if not is_on_floor():
+	if not is_on_floor() or not is_on_wall():
 		velocity += get_gravity() * delta
 	else:
 		wall_running = false
@@ -32,11 +32,6 @@ func _physics_process(delta: float) -> void:
 		speed -= ACCELERATION
 		speed = clampf(speed, WALK_SPEED, MAX_DASH_SPEED)
 	
-	# Wall running.
-	if speed > MIN_DASH_SPEED and not wall_running and is_on_wall() and not is_on_floor():
-		wall_running = true
-		velocity.y = (speed - MIN_DASH_SPEED) * -1
-	
 	# Get the input direction and havelocity.y += 10ndle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction: float = Input.get_axis("ui_left", "ui_right")
@@ -44,6 +39,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
+	
+	# Wall running.
+	if speed > MIN_DASH_SPEED and is_on_wall() and direction and not is_on_floor():
+		wall_running = true
+		velocity.y = (speed - MIN_DASH_SPEED) * -1
 	
 	if velocity.x:
 		$Sprite2D.play("walk")
